@@ -1,3 +1,4 @@
+#imports
 import sys
 import time
 from visualize import *
@@ -23,9 +24,7 @@ def load_fib():
         line = fp.readline()
         cnt = 1
         while line and cnt < 1000:
-            #print("Line {}: {}".format(cnt, line.strip()))
             line = fp.readline().strip()
-            print(float(line))
             list.append(float(line))
             cnt += 1
 
@@ -35,18 +34,17 @@ def load_fib():
 def km_to_mi(km):
     return km * mi_per_km
 
-# convert mi to km
+# Convert mi to km
 def mi_to_km(mi):
     return mi * km_per_mi
 
-# calculate the difference between the the fibo #
+# calculate the %error between the  fib #
 # and the actual conversion number using fib(n), fib(n+1)
 def loss(n, list):
-    fib_mi = list[n]
+    mi = list[n]
     fib_km = list[n+1]
 
-    actual_mi = list[n]
-    actual_km = mi_to_km(actual_mi)
+    actual_km = mi_to_km(mi)
 
     return abs((actual_km - fib_km) / actual_km) * 100
 

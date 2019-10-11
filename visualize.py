@@ -30,7 +30,7 @@ def plot_error(epoch, error, name, xaxis, color='#000'):
 
     if name not in d:
         d[name] = []
-    d[name].append((epoch, error)) # this might need some work
+    d[name].append((epoch, error))
 
     x, y = zip(*d[name]) # need to understand this
     data = [get_line(x, y, 'error', color=color)]
